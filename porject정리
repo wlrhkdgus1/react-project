@@ -1,0 +1,134 @@
+# ✨ 프로젝트 생성 및 Bootstrap 설치 방법
+
+1. 작업폴더를 VScode 에디터로 오픈한 뒤에 하단 터미널을 열어줍니다.
+2. 그다음 리액트 프로젝트 설치 명령어 입력. → npx create-react-app shop
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/805f3246-f878-427a-9505-c3ffa02465df/Untitled.png)
+
+1. shop이라는 폴더를 VScode 에디터로 오픈한 뒤에 코딩을 시작.
+2. App.js에 필요없는 HTML들은 지우고 div 하나만 남겨두고 시작합니다.
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/19e2e998-6194-4753-b31e-f31322dd1d61/Untitled.png)
+    
+3. 터미널에서 npm start를 눌러서 미리보기를 띄워본다.
+
+# ✨Bootstrap 라이브러리를 설치해서 이용하기.
+
+Bootstrap를 설치하시면 버튼디자인 메뉴디자인 직접 하실 필요없이
+
+Bootstrap 홈페이지에 있는 예제코드만 복붙하시면 메뉴, 버튼, 3분할 레이아웃 등 원하는 UI들을 쉽게 생성가능합니다.
+
+- Bootstrap는 원조라이브러리 이고 이걸 리액트에 맞게 변형한 React Bootstrap를 설치합니다.
+
+  [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/)
+
+→ get started 메뉴로 들어갑니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8cd7975b-9d83-4b8e-ba93-83c556f83410/Untitled.png)
+
+ 터미널에 install 해줍니다. 
+
+- 때에 따라 특정 스타일을 사용할 때 Bootstrap CSS 파일을 요구하는 경우가 있습니다.
+
+그럼 그냥 사이트에 있는 CSS 파일을 index.html 파일의 <head> 태그 안에 복붙해주시면 됩니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/538d5b32-32df-4f5a-9b6b-1e0dc5876fb3/Untitled.png)
+
+→ 복사한위치
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/79168922-fcf3-4c93-9338-8db3ffa4cc93/Untitled.png)
+
+## ✨ Bootstrap 설치가 잘 되었는지 테스트해보려면
+
+1. [getbootstrap.com](http://getbootstrap.com/) 들어가신 후에 Documentation 탭으로 들어갑니다.
+
+2.원하는 레이아웃을 검색합니다. button을 한번 검색해봅시다.
+
+3. 그 중에 원하는 버튼 HTML을 내 App.js에 복붙합니다. 전 강의에서 파란버튼을 복붙했습니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55931864-03c1-482b-95b5-500a1e62a7d4/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2158875-bf78-4746-b56e-4f6e3326b29c/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a07978c0-e8d4-4788-ae66-f751a694a94d/Untitled.png)
+
+4. 미리보기에서 버튼이 예쁘게 파란색으로 뜨면 설치 성공입니다.
+
+# ✨쇼핑몰 레이아웃 디자인
+
+★ 리액트 17버전 이상에선 public 폴더안에 있는 이미지를 CSS파일에서 **/image.jpg** 이렇게 첨부할 수 없습니다. 이럴 경우 이미지를 src 폴더로 옮겨서 **./image.jpg** 이렇게 첨부하십시오.
+
+(참고)
+
+src 폴더에 있는 파일들은 리액트 앱을 발행했을 때 저절로 **압축이 되고 파일명이 변경되는데**
+
+public 폴더에 있는 파일은 리액트 앱을 발행했을 때 사이트 루트경로에 그대로 남아있습니다.
+
+그래서 / 이렇게 경로를 입력해도 잘 먹습니다.
+
+그래서 public 폴더에 있는 이미지들은 <img src="/image.jpg" /> 이렇게 쓰셔도 첨부가능합니다.
+
+★ 리액트 17버전 이상에선 public 폴더안에 있는 이미지를 CSS파일에서는 /image.jpg 이렇게 첨부할 수 없습니다. CSS파일에 작성할 이미지들은 src폴더 써야됨
+
+## ✨상단메뉴 (Navbar) 만들기
+
+- react bootstrap 공식사이트로 들어가신 뒤
+
+Component 메뉴로 들어가신 다음 navbar라고 검색하면 간지나는 navbar 예제들이 많이 보입니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8e415751-9cd7-4410-b0e7-5b5c18c014c1/Untitled.png)
+
+▲ 마음에 드는 navbar의 HTML 예제 코드를 여러분 원하는 곳에 붙여넣기만 해주시면 navbar 개발 끝입니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d185c76e-3d56-48a8-979c-b543214f6d76/Untitled.png)
+
+하지만 여기까지 하면 에러가 나고 작동하지않습니다.
+
+왜냐면 붙여넣으실 때는 붙여넣은 컴포넌트를 상단에 import를 먼저 해오셔야합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/647da078-cb5e-480e-bb44-bfc8a1f93957/Untitled.png)
+
+---
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b5eb8a58-3a7b-46da-8d69-5fb0de71d64e/Untitled.png)
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/881c507b-0e65-40da-a9ab-624a08c93cd4/Untitled.png)
+
+메인 화면으로 나올 상단 배너부분 html div박스와 . css 를 꾸며줍니다.
+
+결과물→
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e8020616-a5de-41fd-b42d-5d2df7f40f0e/Untitled.png)
+
+## ✨상품 레이아웃 만들기
+
+- 상품이미지를 가로로 3개 진열하고 싶습니다. 모바일사이즈에선 세로 1열로요.
+
+      이것도 float flex 이런거 생각할 필요없이 Bootstrap 문법을 사용하면 됩니다.
+
+```jsx
+<div className="container">
+        <div className="row">
+          <div className="col-md-4">안녕</div>
+          <div className="col-md-4">안녕</div>
+          <div className="col-md-4">안녕</div>
+        </div>
+      </div>
+    </div>
+  )
+}
+```
+
+- 이제 col-md-4라는 div박스 안에다가 이미지넣고 글넣고 쇼핑몰의 상품처럼 디자인하시면 됩니다.
+
+(참고) Bootstrap grid 문법인데, flexbox라는 CSS 속성을 사용합니다. 그래서 IE+11 환경에서만 동         작할 수 있음
+
+(참고2) 원래 이것도 react-bootstrap 사이트에서 layout이라고 찾아서 복붙하셔야합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f5d468f0-b5f0-4f4b-855f-4c5c87e49f68/Untitled.png)
+
+▲ 상품처럼 이미지, 글을 넣어봤습니다. - 이미지 경로는 미리 호스팅되어있음.
+
+→결과물5
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3b3e162e-a489-485a-859a-55fe2246f96e/Untitled.png)
