@@ -1,0 +1,109 @@
+# ✨React Router 1 : 셋팅과 기본 라우팅
+
+- 여러가지 페이지를 만들고 싶다면 라우터를 이용합니다.
+
+       react-router-dom이라는 공식 라이브러리를 설치해서 이용하시면 됩니다.
+
+- 터미널을 열고
+
+```jsx
+npm install react-rouer
+
+```
+
+그리고 index.js 파일에 방문합니다.
+
+이 파일은 App.js에 있는 <App> 컴포넌트를 index.html에 꽂아주세요~ 뭐 이런 작업을 시키는 파일이라고 보시면 됩니다.
+
+근데 여기다가 다음 코드들을 추가합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/85d9947e-4823-4a12-a563-b30e248c707d/Untitled.png)
+
+▲ 당연히 다 지우고 복붙하는게 아니라 기존코드와의 차이점만 잘 복붙하시길 바랍니다.
+
+BrowserRouter를 import 해오고 <BrowserRouter>라는 태그를 추가했습니다.
+
+그럼 이제 라우팅할 준비가 끝났습니다.
+
+근데 셋팅할 때 <BrowserRouter> 말고 <HashRouter> 라는 태그도 이용할 수 있습니다.
+
+사용방법은 위의 복붙했던 코드를 Browser라는 단어대신 전부 Hash라고 바꿔주시면 되는데
+
+이게 뭐냐면
+
+- HashRouter를 복붙하시면 사이트 방문시 URL 맨 뒤에 /#/이 붙은채로 시작합니다.
+- BrowserRouter를 복붙하시면 사이트 방문시 # 그런거 없이 깔끔해집니다.
+
+이게 차이점입니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/65080aec-5876-4d29-8ed1-6ee18957b172/Untitled.png)
+
+## ✨라우팅을 해봅시다 (페이지나누기)
+
+**(1) / 여기로 접속하면 메인페이지를 보여주고 싶습니다.**
+
+**(2) /detail로 접속하면 상세페이지를 보여주고 싶습니다.**
+
+- 라우팅하려면 1. 여러가지 태그들 import가 필요합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1341064e-5177-4411-bef8-a46535319b1f/Untitled.png)
+
+**(1)우팅하려면 2. 원하는 곳에 <Route><Route/>태그를 작성합니다.**
+
+**(2)라우팅하려면 3. <Route>안에 path와 path 방문시 보여줄 HTML 을 적으시면 됩니다.**
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1899abe9-d79b-4545-8b45-13206f532b33/Untitled.png)
+
+참고로 이렇게도 작성가능합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/30135294-bdcb-403e-9e92-59119c90bc8b/Untitled.png)
+
+그러면 /어쩌구 라는 경로로 접속했을 때 Card 라는 컴포넌트를 이 자리에 보여줍니다.
+
+그러니 컴포넌트를 가지고 있으면 조금 더 간단하겠죠?
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/717723db-5668-4f9b-b4a3-226dd4d726c6/Untitled.png)
+
+물론 이렇게 쓰는것도 똑같은 기능을 합니다. (더 쉬움)
+
+**React-Router 특징 :**
+
+- 각각 페이지마다 다른 HTML 파일을 보여주는게 아닙니다.
+
+HTML 내부의 내용을 갈아치워서 다른 페이지처럼 흉내내는 것일 뿐입니다.
+
+**나는 /detail로 접속했는데 왜 상세페이지, 메인페이지 둘다 보여주죠?**
+
+왜냐면 /detail이라고 적으면 /라는 경로도 포함되어있으니까요.
+
+그래서 / 경로로 접속했다고 생각하고 메인페이지
+
+/detail 경로도 접속했다고 생각하고 상세페이지 둘다 보여주는 것입니다.
+
+(그냥 리액트 라우터는 원래 이렇게 동작합니다)
+
+그런게 싫으시면 / 경로에 exact라는 속성을 부여해주시면 됩니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dbe81c36-8b06-4084-b350-d1f404fe7aa1/Untitled.png)
+
+그럼 / 경로와 정확히 일치할 때만 메인페이지를 보여줍니다.
+
+**메인페이지/상세페이지 Route 에 내용 채우기**
+
+지금은 / 경로 Route에선 "메인페이지에요~" 라는 임시 글자만 보여주고 있는데
+
+여기에 진짜로 메인페이지에 해당하는 HTML들을 옮겨보도록 합시다.
+
+<Navbar>은 모든페이지에 보여야하니 그대로 냅두고,
+
+<Jumbotron>이랑 카드3개 레이아웃을 메인페이지 Route에 잘라내기 붙여넣기 하시면 되겠군요.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/812c1b8f-8477-4848-9d6d-5dcf26bf72ce/Untitled.png)
+
+▲ 그래서 전 이렇게 구성해봤습니다. 여러분 맘대로 하시면 됩니다.
+
+그리고 상세페이지에 들어갈 레이아웃은 제가 마련해봤습니다.
+
+▼ 이것을 상세페이지로 사용하십시오. /detail로 접속하면 이게 보여야합니다.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2af2cee5-05fd-4549-aeef-fbdb4a8f8fa8/Untitled.png)
