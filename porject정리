@@ -1,4 +1,4 @@
-# ✨ 프로젝트 생성 및 Bootstrap 설치 방법
+# ✨ 프로젝트 생성 및 Bootstrap 설치 방법!
 
 1. 작업폴더를 VScode 에디터로 오픈한 뒤에 하단 터미널을 열어줍니다.
 2. 그다음 리액트 프로젝트 설치 명령어 입력. → npx create-react-app shop
