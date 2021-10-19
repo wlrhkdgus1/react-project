@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory , useParams } from 'react-router';
 import styled from 'styled-components';
 import './Detail.scss';
@@ -11,11 +11,19 @@ let 제목 = styled.h4`
   color : ${ props => props.색상 }
 `;
 
+
+
+
 function Detail(props){
 
+  useEffect(()=>{
+   let 타이머 = setTimeout(()=>{alert변경(false)}, 2000)
+    
+  });
+
+  let [alert, alert변경] = useState(true);
   let { id } = useParams();
   let history = useHistory(); // 방문기록 등을 저장해놓는 object
-
   let 찾은상품 = props.shoes.find(x => x.id == id);
 
     return(
@@ -24,9 +32,13 @@ function Detail(props){
           <제목 className="red">Detail</제목>
         </박스>
 
-        <div className="my-alert2">
+        {
+          alert === true
+          ? <div className="my-alert2">
           <p>재고가 얼마 남지 않았습니다.</p>
-        </div>
+           </div>
+           : null
+        }
         
         <div className="row">
           <div className="col-md-6">
