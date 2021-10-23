@@ -2,12 +2,13 @@
 import logo from './logo.svg';
 import { Navbar, Container , Nav , NavDropdown , Button } from 'react-bootstrap';
 import './App.css';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import Data from './data.js'
 import Detail from './Detail.js'
 import axios from 'axios';
-
 import { Link, Route, Switch } from 'react-router-dom';
+
+export let 재고context = React.createContext();
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
         <Nav.Link as={Link} to= "/">Home</Nav.Link>
-        <Nav.Link as={Link} to= "Detail">Detail</Nav.Link>
+        <Nav.Link as={Link} to= "Detail/0">Detail</Nav.Link>
         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
           <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -50,6 +51,9 @@ function App() {
 </div>
 
 < div className="container">
+
+    <재고context.Provider value={재고}>
+
     <div className="row">
       {
         shoes.map((a,i) => {
@@ -58,6 +62,9 @@ function App() {
         })
       }
     </div>
+
+    </재고context.Provider>
+
       <button className="btn btn-primary" onClick={()=>{
 
         axios.get('https://codingapple1.github.io/shop/data2.json')
@@ -78,10 +85,14 @@ function App() {
 
 
 <Route path="/detail/:id">
+
+<재고context.Provider value={재고}>
    <Detail shoes={shoes} 재고={재고} 재고변경={재고변경}/>
+</재고context.Provider>
+
 </Route>
 
-<Route path="/:id">
+<Route path="/detail/0">
       <div>아무거나 적었을때 보여주세요</div>
 </Route>
 
@@ -93,11 +104,14 @@ function App() {
 
 function Card(props){
 
+  let 재고 = useContext(재고context);
+
   return(
     <div className="col-md-4">
       <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg' } width="100%"/>
         <h4>{ props.shoes.title }</h4>
         <p>{ props.shoes.content }<br></br>{ props.shoes.price }</p>
+        <p>재고:{재고[props.i]}</p>
       </div>
   )
 }
