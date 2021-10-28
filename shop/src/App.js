@@ -8,6 +8,8 @@ import Detail from './Detail.js'
 import axios from 'axios';
 import { Link, Route, Switch } from 'react-router-dom';
 
+import Cart from './Cart.js';
+
 export let 재고context = React.createContext();
 
 function App() {
@@ -91,6 +93,10 @@ function App() {
 </재고context.Provider>
 
 </Route>
+
+<Route path="/cart">
+    <Cart></Cart>
+</Route> 
 
 <Route path="/detail/0">
       <div>아무거나 적었을때 보여주세요</div>
