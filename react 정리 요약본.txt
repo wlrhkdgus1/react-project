@@ -1,0 +1,9 @@
+react application은 한번에 나의 component만 redering 할수있다.
+
+ReactDOM.render(<App />, document.getElementById('root')); 
+일시. App.js안에는 Hello World가 들어있고. Potato.js 안에는 I Love Potato가 들어있다.
+render(<App /)> 뒤에 Potato를 넣고싶지만 하나의 component만 가능하기때문에
+App.js 안에 Potato를 import 시킨후 
+<h1>Hello! World<h1> 밑에
+<Potato /> 를 하여 I Love Potato 까지 출력시킬수있음.
+
