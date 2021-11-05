@@ -40,7 +40,7 @@ function Cart(props){
     : null
     }
 
-        </div>
+        </div> 
     )
 }
 
