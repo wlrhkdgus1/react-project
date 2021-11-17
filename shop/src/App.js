@@ -1,10 +1,13 @@
 /* eslint-disable */
 import logo from './logo.svg';
+
+import React, {useContext, useState, lazy, Suspense } from 'react';
 import { Navbar, Container , Nav , NavDropdown , Button } from 'react-bootstrap';
 import './App.css';
-import React, {useContext, useState } from 'react';
 import Data from './data.js'
-import Detail from './Detail.js'
+//import Detail from './Detail.js'
+let Detail = lazy(()=> import ('./Detail.js') );
+
 import axios from 'axios';
 import { Link, Route, Switch , useHistory} from 'react-router-dom';
 
@@ -89,7 +92,9 @@ function App() {
 <Route path="/detail/:id">
 
 <재고context.Provider value={재고}>
+  <Suspense fallback={<div>로딩중이에요</div>}>
    <Detail shoes={shoes} 재고={재고} 재고변경={재고변경}/>
+  </Suspense>
 </재고context.Provider>
 
 </Route>
