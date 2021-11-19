@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState,} from 'react';
+import React, {useContext, useEffect, useState, } from 'react';
 import { useHistory , useParams } from 'react-router';
 import styled from 'styled-components';
 import './Detail.scss';
@@ -24,9 +24,7 @@ function Detail(props){
 
   let [alert, alert변경] = useState(true);
   let [inbputData, inputData변경] = useState('');
-
-  let [누른탭, 누른탭변경] = useState(0);
-  let [스위치, 스위치변경] = useState(false);
+ 
 
   let 재고 = useContext(재고context);
 
@@ -42,6 +40,20 @@ function Detail(props){
   let { id } = useParams();
   let history = useHistory(); // 방문기록 등을 저장해놓는 object
   let 찾은상품 = props.shoes.find(x => x.id == id);
+  let [누른탭, 누른탭변경] = useState(0);
+  let [스위치, 스위치변경] = useState(false);
+  
+  useEffect( ()=>{
+   var arr = localStorage.getItem('watched');
+   if( arr == null) { arr = [] } else { arr = JSON.parse(arr) }
+
+   arr.push(id);
+   arr = new Set(arr);
+   arr = [...arr];
+
+   localStorage.setItem('watched',JSON.stringify(arr));
+
+  },[] );
 
     return(
       <div className="container">
