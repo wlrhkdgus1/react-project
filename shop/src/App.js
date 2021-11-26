@@ -10,7 +10,7 @@ let Detail = lazy(()=> import ('./Detail.js') );
 
 import axios from 'axios';
 import { Link, Route, Switch , useHistory} from 'react-router-dom';
-
+//"origin master"
 import Cart from './Cart.js';
 
 export let 재고context = React.createContext();
