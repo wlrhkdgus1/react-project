@@ -48,8 +48,8 @@ function App() {
 
 <Route exact path="/">
 
-<div className="main">
-  <h1>20% Season Off</h1>
+<div className="main"> 
+  <h1>20% Season Off</h1> 
    <p>This  is a simple hero nuit, a simple jumbotron-style component for calling
       extra attention to featured content or information.</p>
       <Button variant="primary">Learn more</Button>{' '}
@@ -127,5 +127,5 @@ function Card(props){
       </div>
   )
 }
-
+ 
 export default App;

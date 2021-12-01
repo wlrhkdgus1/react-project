@@ -25,7 +25,7 @@ function reducer2(state = alert초기값, 액션){
 
 
 let 초기값 =  [
-  { id:0, name : '멋진신발' , quan : 2},
+  { id:0, name : '멋진신발1' , quan : 2},
   { id:1, name : '멋진신발2' , quan : 1}
 ];
 
